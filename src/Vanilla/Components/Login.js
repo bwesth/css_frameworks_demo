@@ -87,8 +87,8 @@ export default function Main() {
           <label
             id="email-label"
             style={{
-              fontSize: "1rem",
-              lineHeight: "1.5rem",
+              fontSize: "1.125rem",
+              lineHeight: "1.75rem",
               width: "100%",
               margin: "0.3em 0 0 0.3em",
             }}
@@ -132,8 +132,8 @@ export default function Main() {
           <label
             id="password-label"
             style={{
-              fontSize: "1rem",
-              lineHeight: "1.5rem",
+              fontSize: "1.125rem",
+              lineHeight: "1.75rem",
               width: "100%",
               margin: "0.3em 0 0 0.3em",
             }}
@@ -147,7 +147,6 @@ export default function Main() {
             style={{
               fontSize: "1.5rem",
               lineHeight: "2rem",
-              display: "inline",
               padding: "0 0 0.3em 0.3em",
               backgroundColor: "white",
             }}
