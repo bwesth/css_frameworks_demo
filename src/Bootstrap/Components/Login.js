@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Button, Form, Image } from "react-bootstrap";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 export default function Main() {
   const [email, setEmail] = useState("");
@@ -31,7 +33,7 @@ export default function Main() {
       bg-light
       "
     >
-      <img
+      <Image
         src="/pizzafox.png"
         className="
         w-50
@@ -39,46 +41,37 @@ export default function Main() {
         m-3 mb-5
         "
       />
-      <form
-        className="
-        container
-        w-75
-        d-flex
-        flex-column
-        "
+      <Form
         onSubmit={handleSubmit}
+        className="container w-75 d-flex flex-column"
       >
-        <h1>Sign in</h1>
-        <p className="fs-4 text-secondary">Please sign in to continue</p>
-        <div class="form-floating mb-3">
-          <input
-            value={email}
-            onChange={handleEmailChange}
-            type="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="swagger@itu.dk"
-          />
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-          <input
-            type="password"
-            class="form-control"
-            id="floatingPassword"
-            placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-          <label for="floatingPassword">Password</label>
-        </div>
-        <input
-          id="submit-input"
-          className="btn btn-primary align-self-end mt-3"
-          type="submit"
-          value="submit ➜"
-        />
-      </form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Email address"
+            className="mb-3"
+          >
+            <Form.Control
+              onChange={handleEmailChange}
+              type="email"
+              placeholder="name@example.com"
+            />
+          </FloatingLabel>{" "}
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <FloatingLabel controlId="floatingPassword" label="Password">
+            <Form.Control
+              onChange={handlePasswordChange}
+              type="password"
+              placeholder="Password"
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 }
